@@ -15,10 +15,13 @@ const RolesSchema = Schema({
         }],
         required: [true, 'Los permisos son requeridos'],
     },
-    estadorol:{
-            type: Boolean,
-            required: true
-    }
+    estadorol: {
+        type: String,
+        required: [true, 'El estado es requerido'],
+        enum: ['Activo', 'Inactivo'],
+        match: [/^[A-Za-z\s]+$/, 'El estado de servicios solo debe contener letras'],
+        default: 'Activo',
+    },
 });
 
 module.exports = model('Roles', RolesSchema);
