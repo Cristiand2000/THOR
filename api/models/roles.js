@@ -19,7 +19,7 @@ const RolesSchema = Schema({
         type: String,
         required: [true, 'El estado es requerido'],
         enum: ['Activo', 'Inactivo'],
-        match: [/^[A-Za-z\s]+$/, 'El estado de servicios solo debe contener letras'],
+        match: [/^[A-Za-z\s]+$/, 'El estado de roles solo debe contener letras'],
         default: 'Activo',
     },
 });
